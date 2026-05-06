@@ -2,6 +2,7 @@ import Navbar from '@/components/Navbar'
 import Hero from '@/components/Hero'
 import Ticker from '@/components/Ticker'
 import CollectionGrid from '@/components/CollectionGrid'
+import DropThree from '@/components/DropThree'
 import Cultura from '@/components/Cultura'
 import Founder from '@/components/Founder'
 import WhereToBuy from '@/components/WhereToBuy'
@@ -15,6 +16,7 @@ export default function Home() {
       <Hero />
       <Ticker />
       <CollectionGrid />
+      <DropThree />
       <Cultura />
       <Founder />
       <WhereToBuy />
