@@ -27,7 +27,7 @@ export default function Navbar() {
         transition={{ delay: 0.1, duration: 0.7, ease: 'easeOut' }}
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
           scrolled
-            ? 'bg-[#050505]/97 backdrop-blur-md border-b border-[#b5935a]/12'
+            ? 'bg-[#030303]/97 backdrop-blur-md border-b border-[#b5935a]/12'
             : 'bg-transparent'
         }`}
       >
@@ -71,7 +71,7 @@ export default function Navbar() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.55 }}
-              className="bg-[#b5935a] text-[#050505] font-dm font-bold text-[9px] tracking-[0.25em] uppercase px-5 py-2.5 hover:bg-[#f0ead6] transition-colors duration-200"
+              className="bg-[#b5935a] text-[#030303] font-dm font-bold text-[9px] tracking-[0.25em] uppercase px-5 py-2.5 hover:bg-[#f0ead6] transition-colors duration-200"
             >
               SHOP NOW
             </motion.a>
@@ -98,7 +98,7 @@ export default function Navbar() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.3 }}
-            className="fixed inset-0 z-40 bg-[#050505] flex flex-col items-center justify-center gap-6"
+            className="fixed inset-0 z-40 bg-[#030303] flex flex-col items-center justify-center gap-6"
           >
             <div className="absolute inset-0 opacity-[0.03]"
               style={{ backgroundImage: `url("data:image/svg+xml,${encodeURIComponent(aztecSvg)}")`, backgroundRepeat: 'repeat', backgroundSize: '100px 100px' }}
@@ -125,7 +125,7 @@ export default function Navbar() {
               animate={{ opacity: 1 }}
               transition={{ delay: 0.35 }}
               onClick={() => setOpen(false)}
-              className="mt-6 bg-[#b5935a] text-[#050505] font-dm font-bold text-sm tracking-widest uppercase px-10 py-4"
+              className="mt-6 bg-[#b5935a] text-[#030303] font-dm font-bold text-sm tracking-widest uppercase px-10 py-4"
             >
               SHOP NOW
             </motion.a>

@@ -66,7 +66,7 @@ export default function DropThree() {
   const headInView = useInView(headRef, { once: true, margin: '-40px' })
 
   return (
-    <section id="drop-003" className="relative bg-[#050505] py-28 px-6 overflow-hidden border-t border-[#c0392b]/20">
+    <section id="drop-003" className="relative bg-[#030303] py-28 px-6 overflow-hidden border-t border-[#c0392b]/20">
 
       {/* Animated lip-print bg motif */}
       {lips.map((l, i) => (
@@ -85,7 +85,7 @@ export default function DropThree() {
           <svg width="80" height="50" viewBox="0 0 80 50" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M40 8 C28 8 14 16 8 26 C14 20 22 18 30 20 C34 21 37 24 40 24 C43 24 46 21 50 20 C58 18 66 20 72 26 C66 16 52 8 40 8Z" fill="#c0392b"/>
             <path d="M8 26 C12 34 22 42 40 44 C58 42 68 34 72 26 C62 32 52 34 40 34 C28 34 18 32 8 26Z" fill="#c0392b"/>
-            <path d="M30 20 C34 21 37 24 40 24 C43 24 46 21 50 20 C46 22 43 26 40 26 C37 26 34 22 30 20Z" fill="#050505" opacity="0.4"/>
+            <path d="M30 20 C34 21 37 24 40 24 C43 24 46 21 50 20 C46 22 43 26 40 26 C37 26 34 22 30 20Z" fill="#030303" opacity="0.4"/>
           </svg>
         </div>
       ))}
@@ -220,7 +220,7 @@ export default function DropThree() {
             href="https://porfavorthebrand.com"
             target="_blank"
             rel="noreferrer"
-            className="group flex items-center gap-3 bg-[#c0392b] text-[#f0ead6] font-dm font-bold text-[11px] tracking-[0.2em] uppercase px-8 py-4 hover:bg-[#f0ead6] hover:text-[#050505] transition-colors duration-200"
+            className="group flex items-center gap-3 bg-[#c0392b] text-[#f0ead6] font-dm font-bold text-[11px] tracking-[0.2em] uppercase px-8 py-4 hover:bg-[#f0ead6] hover:text-[#030303] transition-colors duration-200"
           >
             SHOP DROP 003
             <span className="group-hover:translate-x-1 transition-transform duration-200">→</span>
