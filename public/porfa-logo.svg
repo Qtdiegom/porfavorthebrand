@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 200" width="400" height="200">
+  <defs>
+    <path id="arch" d="M 40,160 Q 200,20 360,160" />
+  </defs>
+  <!-- Background -->
+  <rect width="400" height="200" fill="#4a2f23" rx="12"/>
+  <!-- Arched PORFA text -->
+  <text font-family="'Georgia', 'Times New Roman', serif" font-size="88" font-weight="bold" fill="#e8dfc4" letter-spacing="6">
+    <textPath href="#arch" startOffset="50%" text-anchor="middle">PORFA</textPath>
+  </text>
+</svg>

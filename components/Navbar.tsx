@@ -38,9 +38,16 @@ export default function Navbar() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0, duration: 0.6 }}
-            className="font-bebas text-[1.4rem] tracking-[0.25em] text-[#f0ead6] hover:text-[#b5935a] transition-colors"
+            className="hover:opacity-80 transition-opacity"
           >
-            POR FAVOR
+            <svg viewBox="0 0 220 80" width="110" height="40" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <path id="nav-arch" d="M 10,68 Q 110,4 210,68" />
+              </defs>
+              <text fontFamily="'Georgia', 'Times New Roman', serif" fontSize="42" fontWeight="bold" fill="#f0ead6" letterSpacing="4">
+                <textPath href="#nav-arch" startOffset="50%" textAnchor="middle">PORFA</textPath>
+              </text>
+            </svg>
           </motion.a>
 
           {/* Desktop */}

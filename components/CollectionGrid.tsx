@@ -7,27 +7,45 @@ const products = [
   {
     name: 'By the Way Hoodie',
     price: '$78',
-    category: 'Hoodie',
+    category: 'Drop 002',
     img: '/product-1.jpg',
     url: 'https://www.zumiez.com/brands/porfa.html',
   },
   {
-    name: 'Virgin Mary Tee',
+    name: "Don't Break My Heart Tee",
     price: '$48',
-    category: 'Tee',
+    category: 'Drop 003',
+    img: '/product-4.jpg',
+    url: 'https://porfavorthebrand.com',
+  },
+  {
+    name: 'Cherry Porfa Tee',
+    price: '$48',
+    category: 'Drop 003',
+    img: '/product-5.jpg',
+    url: 'https://porfavorthebrand.com',
+  },
+  {
+    name: "J'adore Porfa Tank",
+    price: '$38',
+    category: 'Drop 003',
+    img: '/product-6.jpg',
+    url: 'https://porfavorthebrand.com',
+  },
+  {
+    name: 'Virgin Mary Drop',
+    price: 'From $48',
+    category: 'Drop 002',
     img: '/product-2.jpg',
     url: 'https://www.zumiez.com/brands/porfa.html',
   },
   {
-    name: 'Full Drop Lineup',
-    price: 'From $38',
+    name: 'Full Lineup',
+    price: 'View All',
     category: 'Collection',
     img: '/product-3.jpg',
     url: 'https://porfavorthebrand.com',
   },
-  { name: '???', price: 'TBA', category: 'Coming Soon', img: '', url: '#' },
-  { name: '???', price: 'TBA', category: 'Coming Soon', img: '', url: '#' },
-  { name: '???', price: 'TBA', category: 'Coming Soon', img: '', url: '#' },
 ]
 
 const container = {
