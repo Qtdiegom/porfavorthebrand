@@ -18,9 +18,9 @@ const contacts = [
   },
   {
     label: 'Email',
-    handle: 'info@porfavorthebrand.com',
+    handle: 'shop@porfavorthebrand.com',
     sub: 'General inquiries & press kits',
-    href: 'mailto:info@porfavorthebrand.com',
+    href: 'mailto:shop@porfavorthebrand.com',
     icon: (
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
         <rect x="2" y="4" width="20" height="16" rx="2"/>

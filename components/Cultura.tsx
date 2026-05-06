@@ -4,9 +4,9 @@ import { motion, useInView } from 'framer-motion'
 import Image from 'next/image'
 
 const stats = [
-  { label: '100% Independent', sub: 'No VC. No sellout. Just cultura.' },
-  { label: 'Collab with Zumiez', sub: 'Coast to coast. Nationwide presence.' },
-  { label: 'Hecho Con Orgullo', sub: 'Made with pride. Every single stitch.' },
+  { label: '300+ Zumiez Stores', sub: 'Coast to coast. Nationwide presence.' },
+  { label: '52K Brand Followers', sub: 'La familia keeps growing. Join us.' },
+  { label: 'Houston Born', sub: 'Texas roots. Global reach. Always Porfa.' },
 ]
 
 const lookbook = [

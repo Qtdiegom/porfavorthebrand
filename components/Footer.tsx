@@ -47,17 +47,43 @@ export default function Footer() {
 
           {/* Social icons */}
           <div className="flex items-center gap-5">
+            {/* Brand IG */}
             <a
               href="https://instagram.com/porfavorthebrand"
               target="_blank"
               rel="noreferrer"
-              aria-label="Instagram"
+              aria-label="Brand Instagram"
+              title="@porfavorthebrand"
               className="text-[#f0ead6]/30 hover:text-[#b5935a] transition-colors"
             >
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
                 <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
                 <circle cx="12" cy="12" r="4"/>
                 <circle cx="17.5" cy="6.5" r="0.5" fill="currentColor"/>
+              </svg>
+            </a>
+            {/* Founder IG */}
+            <a
+              href="https://instagram.com/santea__"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="Founder Instagram"
+              title="@santea__"
+              className="font-dm text-[10px] tracking-[0.2em] uppercase text-[#f0ead6]/30 hover:text-[#b5935a] transition-colors"
+            >
+              @santea__
+            </a>
+            {/* Founder TikTok */}
+            <a
+              href="https://tiktok.com/@santea_"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="Founder TikTok"
+              title="@santea_"
+              className="text-[#f0ead6]/30 hover:text-[#b5935a] transition-colors"
+            >
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.95a8.27 8.27 0 004.84 1.55V7.04a4.85 4.85 0 01-1.07-.35z"/>
               </svg>
             </a>
             <a
