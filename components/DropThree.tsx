@@ -5,10 +5,10 @@ import Image from 'next/image'
 
 const products = [
   {
-    name: 'Guadalupe Hoodie',
-    price: '$78',
-    tag: 'BESTSELLER',
-    img: '/product-2.jpg',
+    name: 'Full Drop 003 Lineup',
+    price: 'Shop All',
+    tag: 'OUT NOW',
+    img: '/drop003-lineup.jpg',
     href: 'https://porfavorthebrand.com',
   },
   {
@@ -33,18 +33,18 @@ const products = [
     href: 'https://porfavorthebrand.com',
   },
   {
-    name: 'Script Hoodie + Sweatpants',
-    price: '$128',
-    tag: 'SET',
-    img: '/product-3.jpg',
+    name: 'Guadalupe Hoodie',
+    price: '$78',
+    tag: 'BESTSELLER',
+    img: '/product-2.jpg',
     href: 'https://porfavorthebrand.com',
   },
   {
-    name: 'Full Drop 003',
-    price: 'Shop All',
-    tag: 'VIEW ALL',
+    name: 'By the Way Set',
+    price: '$128',
+    tag: 'DROP 002',
     img: '/product-1.jpg',
-    href: 'https://porfavorthebrand.com',
+    href: 'https://www.zumiez.com/brands/porfa.html',
   },
 ]
 
