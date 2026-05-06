@@ -25,6 +25,17 @@ const aztecSvg = `<svg xmlns="http://www.w3.org/2000/svg" width="140" height="14
 export default function Hero() {
   return (
     <section className="relative min-h-screen flex items-center overflow-hidden bg-[#080808]" id="hero">
+      {/* Real photo background */}
+      <div
+        className="absolute inset-0"
+        style={{
+          backgroundImage: 'url(/hero-bg.jpg)',
+          backgroundSize: 'cover',
+          backgroundPosition: 'center 20%',
+          opacity: 0.18,
+        }}
+      />
+
       {/* Aztec background pattern */}
       <div
         className="absolute inset-0"

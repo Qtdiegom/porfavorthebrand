@@ -10,10 +10,10 @@ const stats = [
 ]
 
 const lookbook = [
-  'https://scene7.zumiez.com/is/image/zumiez/product_main_medium/Porfa-Star-Black-T-Shirt-_402705-front-US.jpg',
-  'https://scene7.zumiez.com/is/image/zumiez/product_main_medium/Porfa-Forgive-Black-T-Shirt-_402703-back-US.jpg',
-  'https://scene7.zumiez.com/is/image/zumiez/product_main_medium/Porfa-Stones-Black-Baggy-Sweatpants-_406604-front-US.jpg',
-  'https://scene7.zumiez.com/is/image/zumiez/product_main_medium/Porfa-Star-Black-T-Shirt-_402705-back-US.jpg',
+  '/lookbook-1.jpg',
+  '/lookbook-2.jpg',
+  '/lookbook-3.jpg',
+  '/lookbook-4.jpg',
 ]
 
 const aztecSvg = `<svg xmlns="http://www.w3.org/2000/svg" width="90" height="90" viewBox="0 0 90 90"><circle cx="45" cy="45" r="42" fill="none" stroke="#b5935a" stroke-width="1"/><circle cx="45" cy="45" r="30" fill="none" stroke="#b5935a" stroke-width="0.5"/><circle cx="45" cy="45" r="18" fill="none" stroke="#b5935a" stroke-width="0.5"/><circle cx="45" cy="45" r="6" fill="none" stroke="#b5935a" stroke-width="1"/><line x1="45" y1="3" x2="45" y2="27" stroke="#b5935a" stroke-width="1.2"/><line x1="45" y1="63" x2="45" y2="87" stroke="#b5935a" stroke-width="1.2"/><line x1="3" y1="45" x2="27" y2="45" stroke="#b5935a" stroke-width="1.2"/><line x1="63" y1="45" x2="87" y2="45" stroke="#b5935a" stroke-width="1.2"/><line x1="18" y1="18" x2="33" y2="33" stroke="#b5935a" stroke-width="0.8"/><line x1="57" y1="57" x2="72" y2="72" stroke="#b5935a" stroke-width="0.8"/><line x1="72" y1="18" x2="57" y2="33" stroke="#b5935a" stroke-width="0.8"/><line x1="18" y1="72" x2="33" y2="57" stroke="#b5935a" stroke-width="0.8"/></svg>`

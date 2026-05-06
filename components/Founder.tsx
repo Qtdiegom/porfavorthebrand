@@ -1,6 +1,7 @@
 'use client'
 import { useRef } from 'react'
 import { motion, useInView } from 'framer-motion'
+import Image from 'next/image'
 
 const socialStats = [
   { platform: 'TikTok', handle: '@santea_', stat: '3.4M', href: 'https://tiktok.com/@santea_' },
@@ -76,6 +77,21 @@ export default function Founder() {
             transition={{ duration: 0.75, delay: 0.15 }}
             className="space-y-4"
           >
+            {/* Founder photo */}
+            <div className="relative w-full aspect-[3/4] overflow-hidden border border-[#b5935a]/15 mb-6">
+              <Image
+                src="/founder.jpg"
+                alt="Santea — Founder of Por Favor The Brand"
+                fill
+                className="object-cover object-top"
+                unoptimized
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#060606] via-transparent to-transparent" />
+              <div className="absolute bottom-4 left-4">
+                <div className="font-bebas text-[#f0ead6] text-lg tracking-widest">SANTEA</div>
+                <div className="font-dm text-[9px] tracking-[0.3em] text-[#b5935a] uppercase">Founder · Houston, TX</div>
+              </div>
+            </div>
             {socialStats.map((s, i) => (
               <motion.a
                 key={s.platform}
