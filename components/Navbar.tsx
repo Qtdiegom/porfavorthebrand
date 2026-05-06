@@ -27,7 +27,7 @@ export default function Navbar() {
         transition={{ delay: 0.1, duration: 0.7, ease: 'easeOut' }}
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
           scrolled
-            ? 'bg-[#080808]/95 backdrop-blur-md border-b border-[#b5935a]/20'
+            ? 'bg-[#050505]/97 backdrop-blur-md border-b border-[#b5935a]/12'
             : 'bg-transparent'
         }`}
       >
@@ -38,7 +38,7 @@ export default function Navbar() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0, duration: 0.6 }}
-            className="hover:opacity-80 transition-opacity"
+            className="hover:opacity-70 transition-opacity"
           >
             <svg viewBox="0 0 220 80" width="110" height="40" xmlns="http://www.w3.org/2000/svg">
               <defs>
@@ -59,21 +59,21 @@ export default function Navbar() {
                 initial={{ opacity: 0, y: -8 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.2 + i * 0.08, duration: 0.5 }}
-                className="font-dm text-[11px] tracking-[0.2em] uppercase text-[#f0ead6]/60 hover:text-[#b5935a] transition-colors"
+                className="font-dm text-[9px] tracking-[0.35em] uppercase text-[#444] hover:text-[#b5935a] transition-colors duration-300"
               >
                 {link.label}
               </motion.a>
             ))}
             <motion.a
-              href="https://www.zumiez.com/brands/porfa.html"
+              href="https://porfavorthebrand.com"
               target="_blank"
               rel="noreferrer"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.55 }}
-              className="bg-[#b5935a] text-[#080808] font-dm font-bold text-[10px] tracking-[0.18em] uppercase px-5 py-2.5 hover:bg-[#f0ead6] transition-colors"
+              className="bg-[#b5935a] text-[#050505] font-dm font-bold text-[9px] tracking-[0.25em] uppercase px-5 py-2.5 hover:bg-[#f0ead6] transition-colors duration-200"
             >
-              SHOP ZUMIEZ
+              SHOP NOW
             </motion.a>
           </div>
 
@@ -83,9 +83,9 @@ export default function Navbar() {
             onClick={() => setOpen(!open)}
             aria-label="Menu"
           >
-            <span className={`block w-6 h-[1.5px] bg-[#f0ead6] transition-all duration-300 origin-center ${open ? 'rotate-45 translate-y-[6.5px]' : ''}`} />
-            <span className={`block w-6 h-[1.5px] bg-[#f0ead6] transition-all duration-300 ${open ? 'opacity-0 scale-x-0' : ''}`} />
-            <span className={`block w-6 h-[1.5px] bg-[#f0ead6] transition-all duration-300 origin-center ${open ? '-rotate-45 -translate-y-[6.5px]' : ''}`} />
+            <span className={`block w-6 h-[1px] bg-[#f0ead6]/60 transition-all duration-300 origin-center ${open ? 'rotate-45 translate-y-[6px]' : ''}`} />
+            <span className={`block w-6 h-[1px] bg-[#f0ead6]/60 transition-all duration-300 ${open ? 'opacity-0 scale-x-0' : ''}`} />
+            <span className={`block w-6 h-[1px] bg-[#f0ead6]/60 transition-all duration-300 origin-center ${open ? '-rotate-45 -translate-y-[6px]' : ''}`} />
           </button>
         </div>
       </motion.nav>
@@ -98,9 +98,8 @@ export default function Navbar() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.3 }}
-            className="fixed inset-0 z-40 bg-[#080808] flex flex-col items-center justify-center gap-6"
+            className="fixed inset-0 z-40 bg-[#050505] flex flex-col items-center justify-center gap-6"
           >
-            {/* Aztec decorative */}
             <div className="absolute inset-0 opacity-[0.03]"
               style={{ backgroundImage: `url("data:image/svg+xml,${encodeURIComponent(aztecSvg)}")`, backgroundRepeat: 'repeat', backgroundSize: '100px 100px' }}
             />
@@ -113,22 +112,22 @@ export default function Navbar() {
                 exit={{ opacity: 0, y: 12 }}
                 transition={{ delay: i * 0.07, duration: 0.4 }}
                 onClick={() => setOpen(false)}
-                className="font-bebas text-[14vw] leading-none tracking-widest text-[#f0ead6] hover:text-[#b5935a] transition-colors"
+                className="font-bebas text-[14vw] leading-none tracking-widest text-[#f0ead6]/80 hover:text-[#b5935a] transition-colors"
               >
                 {link.label}
               </motion.a>
             ))}
             <motion.a
-              href="https://www.zumiez.com/brands/porfa.html"
+              href="https://porfavorthebrand.com"
               target="_blank"
               rel="noreferrer"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.35 }}
               onClick={() => setOpen(false)}
-              className="mt-6 bg-[#b5935a] text-[#080808] font-dm font-bold text-sm tracking-widest uppercase px-10 py-4"
+              className="mt-6 bg-[#b5935a] text-[#050505] font-dm font-bold text-sm tracking-widest uppercase px-10 py-4"
             >
-              SHOP ZUMIEZ
+              SHOP NOW
             </motion.a>
           </motion.div>
         )}

@@ -37,7 +37,7 @@ export default function WhereToBuy() {
   const inView = useInView(ref, { once: true, margin: '-60px' })
 
   return (
-    <section id="where-to-buy" className="relative bg-[#080808] py-24 px-6 border-t border-[#b5935a]/10 overflow-hidden">
+    <section id="where-to-buy" className="relative bg-[#050505] py-24 px-6 border-t border-[#b5935a]/10 overflow-hidden">
       {/* Gold glow top */}
       <div
         className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[2px]"

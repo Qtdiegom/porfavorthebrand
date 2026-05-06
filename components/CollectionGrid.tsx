@@ -50,7 +50,7 @@ const products = [
 
 const container = {
   hidden: {},
-  visible: { transition: { staggerChildren: 0.1 } },
+  visible: { transition: { staggerChildren: 0.08 } },
 }
 const card = {
   hidden: { opacity: 0, y: 40 },
@@ -62,7 +62,7 @@ export default function CollectionGrid() {
   const inView = useInView(ref, { once: true, margin: '-80px' })
 
   return (
-    <section id="drops" className="bg-[#080808] py-24 px-6">
+    <section id="drops" className="bg-[#050505] py-24 px-6">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <motion.div
@@ -72,11 +72,14 @@ export default function CollectionGrid() {
           transition={{ duration: 0.65 }}
           className="mb-16"
         >
-          <p className="font-dm text-[10px] tracking-[0.4em] text-[#b5935a] uppercase mb-3">— SS2025 Collection</p>
+          <div className="flex items-center gap-3 mb-4">
+            <div className="w-4 h-[1px] bg-[#b5935a]" />
+            <p className="font-dm font-light text-[9px] tracking-[0.45em] text-[#b5935a] uppercase">SS2025 Collection</p>
+          </div>
           <h2 className="font-bebas text-[clamp(3rem,8vw,7rem)] text-[#f0ead6] leading-none tracking-wide">
             LA COLECCIÓN
           </h2>
-          <div className="w-14 h-[2px] bg-[#b5935a] mt-5" />
+          <div className="w-12 h-[1px] bg-[#b5935a]/60 mt-5" />
         </motion.div>
 
         {/* Grid */}
@@ -84,50 +87,55 @@ export default function CollectionGrid() {
           variants={container}
           initial="hidden"
           animate={inView ? 'visible' : 'hidden'}
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3"
         >
           {products.map((p, i) => (
             <motion.div key={i} variants={card}>
               <a
                 href={p.url}
-                target={p.img ? '_blank' : undefined}
+                target="_blank"
                 rel="noreferrer"
-                className="group block bg-[#0d0d0d] border border-[#1e1e1e] hover:border-[#b5935a] transition-all duration-400 overflow-hidden"
+                className="group block overflow-hidden"
+                style={{ background: '#0a0a0a', border: '0.5px solid #141414', transition: 'border-color 0.4s' }}
+                onMouseEnter={e => (e.currentTarget.style.borderColor = 'rgba(181,147,90,0.35)')}
+                onMouseLeave={e => (e.currentTarget.style.borderColor = '#141414')}
               >
                 {/* Image area */}
-                <div className="relative aspect-square overflow-hidden">
+                <div className="relative aspect-square overflow-hidden" style={{ background: '#0a0a0a' }}>
                   {p.img ? (
                     <>
                       <Image
                         src={p.img}
                         alt={p.name}
                         fill
-                        className="object-cover group-hover:scale-[1.04] transition-transform duration-700"
+                        className="object-cover group-hover:scale-[1.06] transition-transform duration-700 ease-out"
                         unoptimized
                       />
-                      <div className="absolute inset-0 bg-gradient-to-t from-[#080808]/60 to-transparent" />
+                      <div className="absolute inset-0 bg-gradient-to-t from-[#050505]/60 via-transparent to-transparent" />
                       {/* Hover CTA */}
-                      <div className="absolute inset-0 flex items-center justify-center bg-[#080808]/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                        <span className="font-dm font-bold text-[11px] tracking-[0.2em] uppercase text-[#080808] bg-[#b5935a] px-6 py-3">
+                      <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-350"
+                        style={{ background: 'rgba(5,5,5,0.45)' }}>
+                        <span className="font-dm font-bold text-[10px] tracking-[0.3em] uppercase px-6 py-3"
+                          style={{ background: '#b5935a', color: '#050505' }}>
                           SHOP NOW →
                         </span>
                       </div>
                     </>
                   ) : (
-                    <div className="w-full h-full bg-[#0a0a0a] border border-[#b5935a]/10 flex items-center justify-center">
+                    <div className="w-full h-full flex items-center justify-center" style={{ background: '#0a0a0a' }}>
                       <div className="text-center">
-                        <div className="font-bebas text-6xl text-[#b5935a]/20 mb-2">???</div>
-                        <div className="font-dm text-[9px] tracking-[0.35em] text-[#f0ead6]/20 uppercase">Coming Soon</div>
+                        <div className="font-bebas text-6xl mb-2" style={{ color: 'rgba(181,147,90,0.08)' }}>???</div>
+                        <div className="font-dm font-light text-[9px] tracking-[0.35em] uppercase" style={{ color: 'rgba(240,234,214,0.12)' }}>Coming Soon</div>
                       </div>
                     </div>
                   )}
                 </div>
 
                 {/* Info */}
-                <div className="p-5 border-t border-[#1e1e1e] group-hover:border-[#b5935a]/30 transition-colors duration-400">
-                  <div className="font-dm text-[10px] text-[#b5935a] tracking-[0.25em] uppercase mb-1">{p.category}</div>
-                  <div className="font-bebas text-[#f0ead6] text-2xl leading-tight tracking-wide">{p.name}</div>
-                  <div className="font-dm text-[#b5935a]/80 text-sm mt-1">{p.price}</div>
+                <div className="p-5">
+                  <div className="font-dm font-light text-[9px] tracking-[0.3em] uppercase mb-1.5" style={{ color: 'rgba(181,147,90,0.6)' }}>{p.category}</div>
+                  <div className="font-bebas text-[1.4rem] leading-tight tracking-wider group-hover:text-[#b5935a] transition-colors duration-300" style={{ color: 'rgba(240,234,214,0.88)' }}>{p.name}</div>
+                  <div className="font-dm font-light text-xs mt-1.5 tracking-wide" style={{ color: 'rgba(240,234,214,0.28)' }}>{p.price}</div>
                 </div>
               </a>
             </motion.div>
@@ -145,7 +153,10 @@ export default function CollectionGrid() {
             href="https://www.zumiez.com/brands/porfa.html"
             target="_blank"
             rel="noreferrer"
-            className="inline-block border border-[#b5935a]/40 text-[#b5935a] font-dm font-bold text-[11px] tracking-[0.2em] uppercase px-10 py-4 hover:bg-[#b5935a] hover:text-[#080808] transition-colors duration-200"
+            className="inline-block font-dm font-light text-[9px] tracking-[0.35em] uppercase px-10 py-4 transition-colors duration-300"
+            style={{ border: '0.5px solid rgba(181,147,90,0.25)', color: 'rgba(181,147,90,0.55)' }}
+            onMouseEnter={e => { (e.currentTarget as HTMLElement).style.borderColor = '#b5935a'; (e.currentTarget as HTMLElement).style.color = '#b5935a' }}
+            onMouseLeave={e => { (e.currentTarget as HTMLElement).style.borderColor = 'rgba(181,147,90,0.25)'; (e.currentTarget as HTMLElement).style.color = 'rgba(181,147,90,0.55)' }}
           >
             VER TODO EN ZUMIEZ →
           </a>

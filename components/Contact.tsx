@@ -56,7 +56,7 @@ export default function Contact() {
   }
 
   return (
-    <section id="contact" className="bg-[#080808] py-24 px-6 border-t border-[#b5935a]/10">
+    <section id="contact" className="bg-[#050505] py-24 px-6 border-t border-[#b5935a]/10">
       <div className="max-w-7xl mx-auto" ref={ref}>
         {/* Header */}
         <motion.div
@@ -144,7 +144,7 @@ export default function Contact() {
                 className={`w-full font-dm font-bold text-[11px] tracking-[0.25em] uppercase py-4 transition-all duration-300 ${
                   sent
                     ? 'bg-[#1a6b3a] text-[#f0ead6]'
-                    : 'bg-[#b5935a] text-[#080808] hover:bg-[#f0ead6]'
+                    : 'bg-[#b5935a] text-[#050505] hover:bg-[#f0ead6]'
                 }`}
               >
                 {sent ? '✓ MENSAJE ENVIADO' : 'ENVIAR MENSAJE'}

@@ -1,30 +1,33 @@
 'use client'
 
-const PHRASE = 'POR FAVOR ✦ HECHO CON ORGULLO ✦ NOW AT ZUMIEZ ✦ LIMITED DROPS ✦ WEAR CULTURA ✦ SS2025 ✦ '
-const repeated = Array(10).fill(PHRASE).join('')
+const PHRASE_1 = 'POR FAVOR ✦ HECHO CON ORGULLO ✦ NOW AT ZUMIEZ ✦ LIMITED DROPS ✦ WEAR CULTURA ✦ SS2025 ✦ HOUSTON TX ✦ '
+const PHRASE_2 = 'DROP 003 ✦ OUT NOW ✦ DON&apos;T BREAK MY HEART ✦ CHERRY PORFA ✦ J&apos;ADORE ✦ GUADALUPE ✦ PORFA THE BRAND ✦ '
+
+const r1 = Array(12).fill(PHRASE_1).join('')
+const r2 = Array(12).fill(PHRASE_2).join('')
 
 export default function Ticker() {
   return (
-    <div className="bg-[#080808] border-y border-[#b5935a]/15 overflow-hidden py-0.5">
-      {/* Row 1 — left */}
-      <div className="relative overflow-hidden py-2.5 border-b border-[#b5935a]/10">
+    <div className="bg-[#050505] border-y border-[#141414] overflow-hidden">
+      {/* Row 1 — scrolls LEFT */}
+      <div className="relative overflow-hidden py-2 border-b border-[#0f0f0f]">
         <div
-          className="flex whitespace-nowrap font-bebas text-sm tracking-[0.22em] text-[#b5935a]"
-          style={{ animation: 'marquee-left 32s linear infinite', width: 'max-content' }}
+          className="flex whitespace-nowrap font-dm font-light text-[9px] tracking-[0.3em] text-[#2a2a2a]"
+          style={{ animation: 'marquee-left 40s linear infinite', width: 'max-content' }}
         >
-          <span>{repeated}</span>
-          <span>{repeated}</span>
+          <span dangerouslySetInnerHTML={{ __html: r1 }} />
+          <span dangerouslySetInnerHTML={{ __html: r1 }} />
         </div>
       </div>
 
-      {/* Row 2 — right */}
-      <div className="relative overflow-hidden py-2.5">
+      {/* Row 2 — scrolls RIGHT */}
+      <div className="relative overflow-hidden py-2">
         <div
-          className="flex whitespace-nowrap font-bebas text-sm tracking-[0.22em] text-[#f0ead6]/20"
-          style={{ animation: 'marquee-right 26s linear infinite', width: 'max-content' }}
+          className="flex whitespace-nowrap font-dm font-light text-[9px] tracking-[0.3em] text-[#2a2a2a]"
+          style={{ animation: 'marquee-right 34s linear infinite', width: 'max-content' }}
         >
-          <span>{repeated}</span>
-          <span>{repeated}</span>
+          <span dangerouslySetInnerHTML={{ __html: r2 }} />
+          <span dangerouslySetInnerHTML={{ __html: r2 }} />
         </div>
       </div>
     </div>
