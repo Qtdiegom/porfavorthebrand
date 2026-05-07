@@ -5,7 +5,7 @@ import Image from 'next/image'
 
 const drops = [
   { name: "Don't Break My Heart Tee", price: '$48', img: '/product-4.jpg', href: 'https://porfavorthebrand.com', tag: 'NEW' },
-  { name: 'Cherry Porfa Tee',         price: '$48', img: '/product-5.jpg', href: 'https://porfavorthebrand.com', tag: 'NEW' },
+  { name: 'Cherry Porfa Tee',         price: '$48', img: '/render-tee-cherry-3d.png', href: 'https://porfavorthebrand.com', tag: 'NEW' },
   { name: "J'adore Porfa Tank",       price: '$38', img: '/product-6.jpg', href: 'https://porfavorthebrand.com', tag: 'NEW' },
   { name: 'Guadalupe Hoodie',          price: '$78', img: '/product-2.jpg', href: 'https://www.zumiez.com/brands/porfa.html', tag: 'BESTSELLER' },
 ]
