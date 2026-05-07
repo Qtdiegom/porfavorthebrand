@@ -50,7 +50,8 @@ export default function Founder() {
                 src="/founder.jpg"
                 alt="Santea — Founder of Por Favor The Brand"
                 fill
-                className="object-cover object-top"
+                className="object-cover"
+                style={{ objectPosition: 'center 15%' }}
                 unoptimized
               />
               <div className="absolute inset-0" style={{ background: 'linear-gradient(to top, #030303 0%, transparent 40%)' }} />
