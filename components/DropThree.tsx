@@ -97,40 +97,98 @@ export default function DropThree() {
         </div>
 
         <div className="grid grid-cols-2 md:grid-cols-4 gap-[3px]">
-          {drops.map((p, i) => (
-            <motion.a
+          {drops.map((p, i) => {
+            const isFlip = p.img === '/render-tee-cherry-3d.png'
+            return (
+            <motion.div
               key={i}
-              href={p.href}
-              target="_blank"
-              rel="noreferrer"
               initial={{ opacity: 0, y: 28 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ delay: 0.2 + i * 0.08, duration: 0.6 }}
-              className="group relative block overflow-hidden"
-              style={{ background: '#080808', aspectRatio: '3/4' }}
+              className="group relative"
+              style={{ aspectRatio: '3/4', perspective: '900px' }}
             >
-              <Image src={p.img} alt={p.name} fill className="object-cover group-hover:scale-[1.05] transition-transform duration-700" unoptimized />
-              <div className="absolute inset-0" style={{ background: 'linear-gradient(to top, rgba(3,3,3,0.85) 0%, transparent 55%)' }} />
+              {isFlip ? (
+                /* ── FLIP CARD (Cherry Porfa Tee only) ── */
+                <a
+                  href={p.href}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="block w-full h-full"
+                  style={{ transformStyle: 'preserve-3d', transition: 'transform 0.7s cubic-bezier(0.4,0.2,0.2,1)', transform: 'rotateY(0deg)' }}
+                  onMouseEnter={e => (e.currentTarget.style.transform = 'rotateY(180deg)')}
+                  onMouseLeave={e => (e.currentTarget.style.transform = 'rotateY(0deg)')}
+                >
+                  {/* FRONT face */}
+                  <div className="absolute inset-0 overflow-hidden" style={{ backfaceVisibility: 'hidden', WebkitBackfaceVisibility: 'hidden', background: '#080808' }}>
+                    <Image src={p.img} alt={p.name} fill className="object-cover" unoptimized />
+                    <div className="absolute inset-0" style={{ background: 'linear-gradient(to top, rgba(3,3,3,0.85) 0%, transparent 55%)' }} />
+                    <div className="absolute top-3 left-3" style={{ background: '#c0392b', padding: '3px 8px' }}>
+                      <span className="font-dm font-bold" style={{ fontSize: 7, letterSpacing: '0.3em', color: '#f0ead6', textTransform: 'uppercase' }}>{p.tag}</span>
+                    </div>
+                    <div className="absolute top-3 right-3" style={{ background: 'rgba(3,3,3,0.6)', border: '0.5px solid rgba(240,234,214,0.15)', padding: '3px 7px' }}>
+                      <span className="font-dm font-light" style={{ fontSize: 7, letterSpacing: '0.3em', color: 'rgba(240,234,214,0.5)', textTransform: 'uppercase' }}>FRONT</span>
+                    </div>
+                    <div className="absolute bottom-0 left-0 right-0 p-4">
+                      <h3 className="font-bebas" style={{ fontSize: '1.2rem', color: '#f0ead6', letterSpacing: '0.05em', lineHeight: 1, marginBottom: 4 }}>{p.name}</h3>
+                      <p className="font-dm font-light" style={{ fontSize: 9, color: 'rgba(240,234,214,0.3)' }}>{p.price}</p>
+                    </div>
+                    <div className="absolute bottom-4 right-4">
+                      <span className="font-dm font-light" style={{ fontSize: 7, letterSpacing: '0.2em', color: 'rgba(240,234,214,0.25)', textTransform: 'uppercase' }}>hover to flip →</span>
+                    </div>
+                  </div>
 
-              {/* Tag */}
-              <div className="absolute top-3 left-3" style={{ background: '#c0392b', padding: '3px 8px' }}>
-                <span className="font-dm font-bold" style={{ fontSize: 7, letterSpacing: '0.3em', color: '#f0ead6', textTransform: 'uppercase' }}>{p.tag}</span>
-              </div>
-
-              {/* Hover overlay */}
-              <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300" style={{ background: 'rgba(3,3,3,0.35)' }}>
-                <span className="font-dm font-bold" style={{ fontSize: 7, letterSpacing: '0.3em', textTransform: 'uppercase', background: '#c0392b', color: '#f0ead6', padding: '8px 16px' }}>
-                  SHOP →
-                </span>
-              </div>
-
-              {/* Info */}
-              <div className="absolute bottom-0 left-0 right-0 p-4">
-                <h3 className="font-bebas" style={{ fontSize: '1.2rem', color: '#f0ead6', letterSpacing: '0.05em', lineHeight: 1, marginBottom: 4 }}>{p.name}</h3>
-                <p className="font-dm font-light" style={{ fontSize: 9, color: 'rgba(240,234,214,0.3)' }}>{p.price}</p>
-              </div>
-            </motion.a>
-          ))}
+                  {/* BACK face */}
+                  <div className="absolute inset-0 overflow-hidden" style={{ backfaceVisibility: 'hidden', WebkitBackfaceVisibility: 'hidden', transform: 'rotateY(180deg)', background: '#080808' }}>
+                    <Image src="/render-tee-cherry-back.png" alt={`${p.name} — back`} fill className="object-cover" unoptimized />
+                    <div className="absolute inset-0" style={{ background: 'linear-gradient(to top, rgba(3,3,3,0.85) 0%, transparent 55%)' }} />
+                    <div className="absolute top-3 left-3" style={{ background: 'rgba(192,57,43,0.15)', border: '0.5px solid #c0392b', padding: '3px 8px' }}>
+                      <span className="font-dm font-bold" style={{ fontSize: 7, letterSpacing: '0.3em', color: '#c0392b', textTransform: 'uppercase' }}>BACK</span>
+                    </div>
+                    <div className="absolute inset-0 flex items-center justify-center" style={{ paddingBottom: '3rem' }}>
+                      <div className="text-center">
+                        <div className="font-bebas" style={{ fontSize: 'clamp(1.8rem,4vw,2.8rem)', color: 'rgba(240,234,214,0.08)', letterSpacing: '0.15em' }}>ONE OF ONE</div>
+                      </div>
+                    </div>
+                    <div className="absolute bottom-0 left-0 right-0 p-4 flex items-end justify-between">
+                      <div>
+                        <h3 className="font-bebas" style={{ fontSize: '1.2rem', color: '#f0ead6', letterSpacing: '0.05em', lineHeight: 1, marginBottom: 4 }}>{p.name}</h3>
+                        <p className="font-dm font-light" style={{ fontSize: 9, color: 'rgba(240,234,214,0.3)' }}>{p.price}</p>
+                      </div>
+                      <span className="font-dm font-bold" style={{ fontSize: 7, letterSpacing: '0.3em', textTransform: 'uppercase', background: '#c0392b', color: '#f0ead6', padding: '6px 12px' }}>
+                        SHOP →
+                      </span>
+                    </div>
+                  </div>
+                </a>
+              ) : (
+                /* ── REGULAR CARD ── */
+                <a
+                  href={p.href}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="group relative block overflow-hidden w-full h-full"
+                  style={{ background: '#080808' }}
+                >
+                  <Image src={p.img} alt={p.name} fill className="object-cover group-hover:scale-[1.05] transition-transform duration-700" unoptimized />
+                  <div className="absolute inset-0" style={{ background: 'linear-gradient(to top, rgba(3,3,3,0.85) 0%, transparent 55%)' }} />
+                  <div className="absolute top-3 left-3" style={{ background: '#c0392b', padding: '3px 8px' }}>
+                    <span className="font-dm font-bold" style={{ fontSize: 7, letterSpacing: '0.3em', color: '#f0ead6', textTransform: 'uppercase' }}>{p.tag}</span>
+                  </div>
+                  <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300" style={{ background: 'rgba(3,3,3,0.35)' }}>
+                    <span className="font-dm font-bold" style={{ fontSize: 7, letterSpacing: '0.3em', textTransform: 'uppercase', background: '#c0392b', color: '#f0ead6', padding: '8px 16px' }}>
+                      SHOP →
+                    </span>
+                  </div>
+                  <div className="absolute bottom-0 left-0 right-0 p-4">
+                    <h3 className="font-bebas" style={{ fontSize: '1.2rem', color: '#f0ead6', letterSpacing: '0.05em', lineHeight: 1, marginBottom: 4 }}>{p.name}</h3>
+                    <p className="font-dm font-light" style={{ fontSize: 9, color: 'rgba(240,234,214,0.3)' }}>{p.price}</p>
+                  </div>
+                </a>
+              )}
+            </motion.div>
+            )
+          })}
         </div>
       </div>
 
