@@ -8,18 +8,18 @@ const r2 = Array(14).fill(ROW2).join('')
 
 export default function Ticker() {
   return (
-    <div style={{ background: '#030303', borderTop: '0.5px solid #111', borderBottom: '0.5px solid #111', overflow: 'hidden' }}>
+    <div style={{ background: '#030303', borderTop: '0.5px solid rgba(181,147,90,0.08)', borderBottom: '0.5px solid rgba(181,147,90,0.08)', overflow: 'hidden' }}>
       {/* Row 1 — scrolls LEFT */}
-      <div style={{ overflow: 'hidden', padding: '7px 0', borderBottom: '0.5px solid #0d0d0d' }}>
+      <div style={{ overflow: 'hidden', padding: '8px 0', borderBottom: '0.5px solid #0d0d0d' }}>
         <div
           className="font-dm font-light whitespace-nowrap"
           style={{
-            animation: 'marquee-left 45s linear infinite',
+            animation: 'marquee-left 50s linear infinite',
             width: 'max-content',
             display: 'flex',
             fontSize: 8,
-            letterSpacing: '0.32em',
-            color: '#1e1e1e',
+            letterSpacing: '0.38em',
+            color: 'rgba(181,147,90,0.18)',
             textTransform: 'uppercase',
           }}
         >
@@ -29,16 +29,16 @@ export default function Ticker() {
       </div>
 
       {/* Row 2 — scrolls RIGHT */}
-      <div style={{ overflow: 'hidden', padding: '7px 0' }}>
+      <div style={{ overflow: 'hidden', padding: '8px 0' }}>
         <div
           className="font-dm font-light whitespace-nowrap"
           style={{
-            animation: 'marquee-right 38s linear infinite',
+            animation: 'marquee-right 42s linear infinite',
             width: 'max-content',
             display: 'flex',
             fontSize: 8,
-            letterSpacing: '0.32em',
-            color: '#1e1e1e',
+            letterSpacing: '0.38em',
+            color: 'rgba(181,147,90,0.18)',
             textTransform: 'uppercase',
           }}
         >

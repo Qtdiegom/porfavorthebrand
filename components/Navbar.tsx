@@ -31,14 +31,31 @@ export default function Navbar() {
             : 'bg-transparent'
         }`}
       >
-        <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-          {/* Logo */}
+        <div className="max-w-7xl mx-auto px-6 py-0 grid grid-cols-3 items-center" style={{ height: 68 }}>
+
+          {/* Left — nav links */}
+          <div className="hidden md:flex items-center gap-7">
+            {links.slice(0, 2).map((link, i) => (
+              <motion.a
+                key={link.label}
+                href={link.href}
+                initial={{ opacity: 0, y: -8 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.2 + i * 0.08, duration: 0.5 }}
+                className="font-dm text-[9px] tracking-[0.38em] uppercase text-[#3a3a3a] hover:text-[#b5935a] transition-colors duration-300"
+              >
+                {link.label}
+              </motion.a>
+            ))}
+          </div>
+
+          {/* Center — Logo */}
           <motion.a
             href="#"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0, duration: 0.6 }}
-            className="hover:opacity-70 transition-opacity"
+            className="flex justify-center hover:opacity-70 transition-opacity"
           >
             <svg viewBox="0 0 220 80" width="110" height="40" xmlns="http://www.w3.org/2000/svg">
               <defs>
@@ -50,43 +67,45 @@ export default function Navbar() {
             </svg>
           </motion.a>
 
-          {/* Desktop */}
-          <div className="hidden md:flex items-center gap-8">
-            {links.map((link, i) => (
+          {/* Right — remaining links + shop */}
+          <div className="flex items-center justify-end gap-7">
+            <div className="hidden md:flex items-center gap-7">
+              {links.slice(2).map((link, i) => (
+                <motion.a
+                  key={link.label}
+                  href={link.href}
+                  initial={{ opacity: 0, y: -8 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.36 + i * 0.08, duration: 0.5 }}
+                  className="font-dm text-[9px] tracking-[0.38em] uppercase text-[#3a3a3a] hover:text-[#b5935a] transition-colors duration-300"
+                >
+                  {link.label}
+                </motion.a>
+              ))}
               <motion.a
-                key={link.label}
-                href={link.href}
-                initial={{ opacity: 0, y: -8 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.2 + i * 0.08, duration: 0.5 }}
-                className="font-dm text-[9px] tracking-[0.35em] uppercase text-[#444] hover:text-[#b5935a] transition-colors duration-300"
+                href="https://porfavorthebrand.com"
+                target="_blank"
+                rel="noreferrer"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 0.55 }}
+                className="bg-[#b5935a] text-[#030303] font-dm font-bold text-[9px] tracking-[0.25em] uppercase px-4 py-2 hover:bg-[#f0ead6] transition-colors duration-200"
               >
-                {link.label}
+                SHOP
               </motion.a>
-            ))}
-            <motion.a
-              href="https://porfavorthebrand.com"
-              target="_blank"
-              rel="noreferrer"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.55 }}
-              className="bg-[#b5935a] text-[#030303] font-dm font-bold text-[9px] tracking-[0.25em] uppercase px-5 py-2.5 hover:bg-[#f0ead6] transition-colors duration-200"
-            >
-              SHOP NOW
-            </motion.a>
-          </div>
+            </div>
 
-          {/* Hamburger */}
-          <button
-            className="md:hidden flex flex-col gap-[5px] p-2"
-            onClick={() => setOpen(!open)}
-            aria-label="Menu"
-          >
-            <span className={`block w-6 h-[1px] bg-[#f0ead6]/60 transition-all duration-300 origin-center ${open ? 'rotate-45 translate-y-[6px]' : ''}`} />
-            <span className={`block w-6 h-[1px] bg-[#f0ead6]/60 transition-all duration-300 ${open ? 'opacity-0 scale-x-0' : ''}`} />
-            <span className={`block w-6 h-[1px] bg-[#f0ead6]/60 transition-all duration-300 origin-center ${open ? '-rotate-45 -translate-y-[6px]' : ''}`} />
-          </button>
+            {/* Hamburger — mobile */}
+            <button
+              className="md:hidden flex flex-col gap-[5px] p-2"
+              onClick={() => setOpen(!open)}
+              aria-label="Menu"
+            >
+              <span className={`block w-6 h-[1px] bg-[#f0ead6]/60 transition-all duration-300 origin-center ${open ? 'rotate-45 translate-y-[6px]' : ''}`} />
+              <span className={`block w-6 h-[1px] bg-[#f0ead6]/60 transition-all duration-300 ${open ? 'opacity-0 scale-x-0' : ''}`} />
+              <span className={`block w-6 h-[1px] bg-[#f0ead6]/60 transition-all duration-300 origin-center ${open ? '-rotate-45 -translate-y-[6px]' : ''}`} />
+            </button>
+          </div>
         </div>
       </motion.nav>
 
