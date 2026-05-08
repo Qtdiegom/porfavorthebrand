@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cherry Porfa Tee — 3D Spin Preview</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    background: #050505;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Segoe UI', sans-serif;
+    overflow: hidden;
+  }
+
+  .title {
+    color: #f0ead6;
+    font-size: 11px;
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+    margin-bottom: 40px;
+    opacity: 0.4;
+  }
+
+  .spin-container {
+    perspective: 1200px;
+    width: 420px;
+    height: 560px;
+  }
+
+  .spinner {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    animation: slowSpin 6s linear infinite;
+  }
+
+  .face {
+    position: absolute;
+    inset: 0;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    border-radius: 4px;
+    overflow: hidden;
+  }
+
+  .face img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  .front { }
+  .back { transform: rotateY(180deg); }
+
+  @keyframes slowSpin {
+    0%   { transform: rotateY(0deg); }
+    100% { transform: rotateY(360deg); }
+  }
+
+  .controls {
+    margin-top: 40px;
+    display: flex;
+    gap: 16px;
+  }
+
+  .controls button {
+    background: none;
+    border: 0.5px solid rgba(240,234,214,0.2);
+    color: #f0ead6;
+    font-size: 10px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  .controls button:hover {
+    border-color: #c0392b;
+    color: #c0392b;
+  }
+  .controls button.active {
+    border-color: #c0392b;
+    background: #c0392b;
+    color: #f0ead6;
+  }
+
+  .speed-label {
+    color: rgba(240,234,214,0.25);
+    font-size: 9px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    margin-top: 20px;
+  }
+</style>
+</head>
+<body>
+
+<p class="title">Cherry Porfa Tee &mdash; 3D Spin Preview</p>
+
+<div class="spin-container">
+  <div class="spinner" id="spinner">
+    <div class="face front">
+      <img src="render-tee-cherry-3d.png" alt="Cherry Porfa Tee Front">
+    </div>
+    <div class="face back">
+      <img src="render-tee-cherry-back.png" alt="Cherry Porfa Tee Back">
+    </div>
+  </div>
+</div>
+
+<div class="controls">
+  <button onclick="setSpeed(10)" id="slow">SLOW</button>
+  <button onclick="setSpeed(6)" id="normal" class="active">NORMAL</button>
+  <button onclick="setSpeed(3)" id="fast">FAST</button>
+  <button onclick="togglePause()" id="pause">PAUSE</button>
+</div>
+
+<p class="speed-label" id="label">6s per rotation</p>
+
+<script>
+  const spinner = document.getElementById('spinner');
+  const label = document.getElementById('label');
+  let paused = false;
+
+  function setSpeed(s) {
+    spinner.style.animationDuration = s + 's';
+    label.textContent = s + 's per rotation';
+    document.querySelectorAll('.controls button').forEach(b => b.classList.remove('active'));
+    if (s === 10) document.getElementById('slow').classList.add('active');
+    if (s === 6) document.getElementById('normal').classList.add('active');
+    if (s === 3) document.getElementById('fast').classList.add('active');
+    if (paused) { paused = false; spinner.style.animationPlayState = 'running'; document.getElementById('pause').textContent = 'PAUSE'; }
+  }
+
+  function togglePause() {
+    paused = !paused;
+    spinner.style.animationPlayState = paused ? 'paused' : 'running';
+    document.getElementById('pause').textContent = paused ? 'PLAY' : 'PAUSE';
+    document.getElementById('pause').classList.toggle('active', paused);
+  }
+</script>
+
+</body>
+</html>
